@@ -1,0 +1,168 @@
+.bgimg
+{
+background: url('http://localhost/psyfit/images/index.png');
+height: 100vh;
+background-size: cover;
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+position:absolute;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+}
+.lout {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.lout:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.lout:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.lout-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.content{
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  text-align: center;
+  padding: 10px 32px;
+  width: 390px;
+  height: 80%;
+  transform: translate(-50%,-50%);
+  background: rgba(20, 20, 20, 1);
+  box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+  color: white;
+  border-radius: 20px;
+}
+.content::-webkit-scrollbar {
+  display: none;
+}
+.greet{
+color: rgba(252, 221, 236, 1);
+font-family: Poppins;
+font-weight: SemiBold;
+font-size: 30px;
+}
+.tgtext
+{
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+  font-family: 'Poppins',sans-serif;
+  align-self: left;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.tg
+{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 400px;
+  align-items: left;
+  padding-bottom: 20px;
+  height: 200px;
+}
+.tgbox
+{
+  padding-top: -10px;
+  background-color: rgba(54, 57, 57, 1);
+  width: 200px;
+  border-radius: 25px;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+.cgtext
+{
+  margin-top: 20px;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Poppins',sans-serif;
+  align-self: left;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.cg
+{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 400px;
+  align-items: left;
+  padding-bottom: 20px;
+
+}
+.cgbox
+{
+  padding-top: -10px;
+  background-color: rgba(54, 57, 57, 1);
+  width: 200px;
+  border-radius: 25px;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  overflow: scroll;
+  overflow-x: hidden;
+  align-items: left;
+}
+.cgbox::-webkit-scrollbar {
+  display: none;
+}
+
+.settings
+{
+    background-color: rgba(54, 57, 57, 1);
+      border-radius: 25px;
+  position: absolute;
+  height: 100px;
+  width: 27px;
+  top:20px;
+  right: 30px;
+}
