@@ -40,7 +40,7 @@ if(isset($_POST['submit1']))
   {
   echo '<script type="text/JavaScript">
   alert("Register Successfull");
-  window.location.replace("index.php")
+  window.location.replace("home.php")
   </script>';
   ;
   }

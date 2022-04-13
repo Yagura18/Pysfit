@@ -9,8 +9,8 @@ function redirect($url){
 
 if(isset($_POST['submit']))
 {
-    $user=$_POST['email'];
-    $pass=$_POST['password'];
+  $user=$_POST['email'];
+  $pass=$_POST['password'];
 	$server="localhost";
 	$username="root";
 	$password="";
@@ -33,7 +33,7 @@ if(isset($_POST['submit']))
                     session_start();
                     $_SESSION['username'] = $user;
                     $_SESSION['user_status'] = "logged_in";
-                    redirect("./index.php");
+                    redirect("./home.php");
                     echo '<script type="text/JavaScript">
                     alert("Login Succefully");
                     </script>';

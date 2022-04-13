@@ -63,7 +63,6 @@ position:absolute;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -161,7 +160,7 @@ font-size: 30px;
     background-color: rgba(54, 57, 57, 1);
       border-radius: 25px;
   position: absolute;
-  height: 100px;
+  height: 200px;
   width: 27px;
   top:20px;
   right: 30px;
