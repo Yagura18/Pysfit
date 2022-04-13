@@ -4,7 +4,7 @@
  $username = "root";
  $password = "";
  $dbname = "psyfit";
- $conn = mysqli_connect($hostname, $username, $password, $dbname,"3308");
+ $conn = mysqli_connect($hostname, $username, $password, $dbname);
  if(!$conn){
    echo "Database connection error".mysqli_connect_error();
  }
