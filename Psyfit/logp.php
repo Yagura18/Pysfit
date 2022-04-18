@@ -16,7 +16,7 @@ if(isset($_POST['submit']))
 	$password="";
 	$dbname="psyfit";
 
-		$conn=mysqli_connect($server,$username,$password,$dbname);
+		$conn=mysqli_connect($server,$username,$password,$dbname,"3308");
 		if($conn->connect_error)
 		{
 			die("Connection failed: ".mysqli_connect_error());
@@ -33,6 +33,29 @@ if(isset($_POST['submit']))
                     session_start();
                     $_SESSION['username'] = $user;
                     $_SESSION['user_status'] = "logged_in";
+                    $_SESSION['start'] = time();
+                    $_SESSION['expire'] = $_SESSION['start'] + (1440 * 60);
+                    $sql="SELECT goal FROM goals ORDER by RAND() LIMIT 1";
+                    $query=mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($query)){
+                        while($row = mysqli_fetch_assoc($query)){
+                            $_SESSION['goal1'] =$row['goal'];
+                        }
+                    }
+                    $sql="SELECT goal FROM goals ORDER by RAND() LIMIT 1";
+                    $query=mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($query)){
+                        while($row = mysqli_fetch_assoc($query)){
+                            $_SESSION['goal2'] =$row['goal'];
+                        }
+                    }
+                    $sql="SELECT txt FROM quote ORDER by RAND() LIMIT 1";
+                    $query=mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($query)){
+                        while($row = mysqli_fetch_assoc($query)){
+                            $_SESSION['quote'] =$row['txt'];
+                        }
+                    }
                     redirect("./home.php");
                     echo '<script type="text/JavaScript">
                     alert("Login Succefully");

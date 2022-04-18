@@ -4,22 +4,46 @@ $hostname = "localhost";
 $usr = "root";
 $password = "";
 $dbname = "psyfit";
-$conn = mysqli_connect($hostname, $usr, $password, $dbname);
+$conn = mysqli_connect($hostname, $usr, $password, $dbname,"3308");
 if(!$conn){
   echo "Database connection error".mysqli_connect_error();
 }
+$status="";
 $currentemail=$_SESSION["username"];
-$sql = "SELECT * FROM users where status!='Occupied' AND email!='$currentemail' ORDER BY RAND() LIMIT 1";
+$currentusername="";
+$sql = "SELECT username,status FROM users where email='$currentemail'";
 $result = mysqli_query($conn, $sql);
 $username;
 if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {
-    $username=$row["username"];
+    $status=$row["status"];
+    $currentusername=$row["username"];
   }
-  $sql1="UPDATE users SET status = 'Occupied' WHERE username='$username'";
-  $sql2="UPDATE users SET status = 'Occupied' WHERE email='$currentemail'";
-  $result1 = mysqli_query($conn, $sql1);
-  $result2 = mysqli_query($conn, $sql2);
+}
+if($status!="null")
+{
+  $username=substr($status,8);
+}
+else {
+  $sql = "SELECT * FROM users where status NOT LIKE '%Occupied%' AND email!='$currentemail' ORDER BY RAND() LIMIT 1";
+  $result = mysqli_query($conn, $sql);
+  $username;
+  if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+      $username=$row["username"];
+    }
+    $stat1="Occupied".$username;
+    $stat="Occupied".$currentusername;
+    $sql1="UPDATE users SET status ='$stat' WHERE username='$username'";
+    $sql2="UPDATE users SET status = '$stat1' WHERE email='$currentemail'";
+    $result1 = mysqli_query($conn, $sql1);
+    $result2 = mysqli_query($conn, $sql2);
+}
+else {
+  $url="./wait.php";
+  header('Location: '.$url);
+}
+
 }
  ?>
 <html>
@@ -47,8 +71,11 @@ if (mysqli_num_rows($result) > 0) {
     <hr>
    </div>
    <div class="chat-area">
-     <div class="chat-box">
-
+     <div class="chat-box" id="cb">
+       <br>
+       <br>
+       <br>
+       <br>
      </div>
      <div class="txtbar">
        <form action="#" class="typing-area">
@@ -64,6 +91,3 @@ if (mysqli_num_rows($result) > 0) {
 
 </body>
 </html>
-<script type="text/javascript">
-
-</script>

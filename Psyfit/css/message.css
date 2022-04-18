@@ -121,3 +121,7 @@ left:0px;
   display: flex;
   justify-content: space-between;
 }
+.chat-area{
+  width: 400px;
+  height: 200px;
+}

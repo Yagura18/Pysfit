@@ -4,10 +4,11 @@
  $username = "root";
  $password = "";
  $dbname = "psyfit";
- $conn = mysqli_connect($hostname, $username, $password, $dbname);
+ $conn = mysqli_connect($hostname, $username, $password, $dbname,"3308");
  if(!$conn){
    echo "Database connection error".mysqli_connect_error();
  }
+$tg;
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +30,7 @@
   <a href="home.php">
     <i class="fa-solid fa-user" style="color:aliceblue; padding-bottom:10px; padding-top:10px;"></i>
   </a>
-  <a href="">
+  <a href="diary.php">
     <i class="fa-solid fa-book"  style="color:aliceblue; padding-bottom:10px;"></i>
   </a>
   <a href="messages.php">
@@ -56,8 +57,8 @@
 <div class="tg">
 <span class="tgtext">Today’s Goal</span>
 <div class="tgbox">
-<span>1.</span><span class="tgt">Take a hot shower before bed</span><br>
-<span>2.</span><span class="tgt">Call an old friend</span>
+<span>1.</span><span class="tgt">   <?php echo $_SESSION['goal1'] ?></span><br>
+<span>2.</span><span class="tgt"><?php echo $_SESSION['goal2'] ?></span>
 </div>
 </div>
 

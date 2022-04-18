@@ -9,7 +9,7 @@
           while($row = mysqli_fetch_assoc($result)) {
             $username=$row["username"];
           }
-
+          
         $outgoing_id = $username;
         $incoming_id = $_POST['incoming_id'];
         $message=$_POST['msg'];

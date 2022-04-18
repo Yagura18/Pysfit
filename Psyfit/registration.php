@@ -13,7 +13,7 @@ if(isset($_POST['submit1']))
   $userdb="root";
   $dbpass="";
   $dbname="psyfit";
-  $conn=mysqli_connect($server,$userdb,$dbpass,$dbname);
+  $conn=mysqli_connect($server,$userdb,$dbpass,$dbname,"3308");
   if($conn->connect_error)
 		{
 			die("Connection failed: ".mysqli_connect_error());
