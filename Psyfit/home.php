@@ -28,25 +28,25 @@ $tg;
 <br>
 <div class="settings">
   <a href="home.php">
-    <i class="fa-solid fa-user" style="color:aliceblue; padding-bottom:10px; padding-top:10px;"></i>
+    <i class="fa-solid fa-user" style="padding-top: 10px;"></i>
   </a>
   <a href="diary.php">
-    <i class="fa-solid fa-book"  style="color:aliceblue; padding-bottom:10px;"></i>
+    <i class="fa-solid fa-book" ></i>
   </a>
   <a href="messages.php">
-    <i class="fa-solid fa-comments" style="color:aliceblue; padding-bottom:10px;"></i>
+    <i class="fa-solid fa-comments"></i>
   </a>
   <a href="tnc.html">
-    <i class="fa-solid fa-scroll" style="color:aliceblue; padding-bottom:10px;"></i>
+    <i class="fa-solid fa-scroll"></i>
   </a>
   <a href="privacypolicy.html">
-    <i class="fa-solid fa-key" style="color:aliceblue; padding-bottom:10px;"></i>
+    <i class="fa-solid fa-key"></i>
   </a>
   <a href="aboutus.html">
-    <i class="fa-solid fa-circle-info" style="color:aliceblue; padding-bottom:10px;"></i>
+    <i class="fa-solid fa-circle-info"></i>
   </a>
   <button id="music" onclick="pause()" style="background-color: rgba(255, 255, 255, 0); border: none; padding: 0;">
-     <i class="fas fa-volume-up" style="color:aliceblue; padding-bottom:10px;" id="music-btn" ></i>
+     <i class="fas fa-volume-up" id="music-btn" ></i>
 </button>
       <audio id="mymusic">
        <source src="./bgmusic/home.mp3">
