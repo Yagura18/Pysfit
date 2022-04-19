@@ -63,7 +63,6 @@ position:absolute;
   flex-wrap: wrap;
   overflow: scroll;
   overflow-x: hidden;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -73,7 +72,7 @@ position:absolute;
   width: 390px;
   height: 80%;
   transform: translate(-50%,-50%);
-  background: rgba(20, 20, 20, 1);
+  background: #0D1321;
   box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
   color: white;
   border-radius: 20px;
@@ -83,17 +82,17 @@ position:absolute;
 }
 .greet{
 color: rgba(252, 221, 236, 1);
-font-family: Poppins;
+font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 font-weight: SemiBold;
 font-size: 30px;
 }
 .tgtext
 {
-  color: white;
+  color: #348e89;
   font-size: 24px;
   font-weight: 600;
   margin-top: 20px;
-  font-family: 'Poppins',sans-serif;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   align-self: left;
   display: flex;
   flex-wrap: nowrap;
@@ -121,16 +120,18 @@ font-size: 30px;
 .cgtext
 {
   margin-top: 10px;
-  color: white;
+  color: #348e89;
   font-size: 24px;
   font-weight: 600;
-  font-family: 'Poppins',sans-serif;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   align-self: left;
   display: flex;
   flex-wrap: nowrap;
 }
 .cg
 {
+  color: #348e89;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -212,4 +213,12 @@ background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, r
   right: 15px;
   border: 3px solid #f1f1f1;
   z-index: 9;
+}
+a{ 
+  color: inherit;
+  text-decoration:  none;
+} 
+i{
+  color:#348e89;
+  padding-bottom: 10px;
 }
