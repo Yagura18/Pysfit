@@ -21,7 +21,6 @@
             while($row = mysqli_fetch_assoc($query)){
               if($row['outgoing_msg_id'] === $outgoing_id){
                     $output .= '<div class="chat outgoing">
-                    <img src="https://picsum.photos/200/300?" style=" height:40px; width:40px; border-radius:50%;" alt="">
                                 <div class="details">
                                     <p>'. $row['msg'] .'</p>
                                 </div>
@@ -30,15 +29,31 @@
                     $output .= '<div class="chat incoming">
 
                                 <div class="details">
-                                    <p>'. $row['msg'] .'</p>q
+                                    <p>'. $row['msg'] .'</p>
                                 </div>
                                 </div>';
                 }
               }
         }else{
+          $currentemail=$_SESSION["username"];
+          $sql = "SELECT * FROM users where  email='$currentemail'";
+          $result = mysqli_query($conn, $sql);
+          $stat;
+          if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+              $stat=$row["status"];
+            }
+          }
+          if($stat==='null')
+          {
+            $output .= '<div class="text">Psyfer has left the chat!</div>';
+          }
+          else{
             $output .= '<div class="text">No messages are available. Once you send message they will appear here.</div>';
+          }
         }
         echo $output;
+
 
 
 ?>

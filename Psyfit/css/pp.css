@@ -3,19 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
-.background-img{
-  height: 100vh;
-  width: 100;
-  background-image: url('../images/prp.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position:absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
-
+body{
+    padding: 0;
+    margin: 0;
+    background: url('../images/index.png');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .Abts
 {
@@ -33,19 +29,24 @@
       }
 
 .content{
+  overflow: scroll;
+  overflow-x: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 999;
   text-align: center;
-  width: 390px;
-  height: 80%;
+  padding: 10px 32px;
+  max-height: 80%;
+  margin-left: auto;
+  margin-right: auto;
   transform: translate(-50%,-50%);
-  background: black;
+  background: rgba(20, 20, 20, 1);
   box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
   color: white;
   border-radius: 20px;
-  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .content::-webkit-scrollbar {
   display: none;
@@ -91,11 +92,28 @@ position:absolute;
   top:20px;
   right: 30px;
 }
-a{ 
+a{
   color: inherit;
   text-decoration:  none;
-} 
+}
 i{
   color:#348e89;
   padding-bottom: 10px;
+}
+@media screen and (max-width: 640px)
+{
+  .content{
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0,12.5%);
+      max-height: 80%;
+      max-width: 70%;
+  }
+  .settings
+  {
+    position: fixed;
+    right: 5%;
+    top: 5%;
+  }
 }

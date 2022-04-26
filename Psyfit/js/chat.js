@@ -8,15 +8,6 @@ form.onsubmit = (e)=>{
     e.preventDefault();
 }
 
-// inputField.focus();
-// inputField.onkeyup = ()=>{
-//     if(inputField.value != ""){
-//         sendBtn.classList.add("active");
-//     }else{
-//         sendBtn.classList.remove("active");
-//     }
-// }
-//
 
 chatBox.onmouseenter = ()=>{
     chatBox.classList.add("active");
@@ -28,12 +19,10 @@ chatBox.onmouseleave = ()=>{
 
 
 
-function scrollToBottom(){
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-
 
   function send(){
+      var elem = document.getElementById('ca');
+      elem.scrollTop = elem.scrollHeight;
   $.post("insert-chat.php",
     {
       msg:inputField.value,
@@ -42,7 +31,7 @@ function scrollToBottom(){
     function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
         inputField.value = "";
-         scrollToBottom();
+
     }
 );
 }
@@ -56,9 +45,26 @@ setInterval(() =>{
     function(data, status){
         console.log("Data: " + data + "\nStatus: " + status);
         document.getElementById('cb').innerHTML=data;
-         scrollToBottom();
-
-
+        if(data){
+          var elem = document.getElementById('ca');
+          elem.scrollTop = elem.scrollHeight;
+        }
     }
 );
 },500);
+
+
+useEffect(() => {
+ window.addEventListener("beforeunload", handleBeforeUnload);
+ return () => {
+   window.removeEventListener("beforeunload", handleBeforeUnload);
+ };
+}, []);
+
+const handleBeforeUnload = (e) => {
+ e.preventDefault();
+ const message =
+   "Are you sure you want to leave? All provided data will be lost.";
+ e.returnValue = message;
+ return message;
+};

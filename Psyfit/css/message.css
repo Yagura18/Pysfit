@@ -1,19 +1,12 @@
-.bg-img
-{
-background: url('http://localhost/psyfit/images/messages.png');
-height: 100vh;
-width: 100%;
-background-size: cover;
-background-position: center;
-background-size: cover;
-background-repeat: no-repeat;
-position:absolute;
-top:0px;
-right:0px;
-bottom:0px;
-left:0px;
+body{
+    padding: 0;
+    margin: 0;
+    background: url('../images/messages.png');
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
 }
-
 .content{
   overflow: scroll;
   overflow-x: hidden;
@@ -24,7 +17,7 @@ left:0px;
   text-align: center;
   padding: 10px 32px;
   width: 390px;
-  height: 80%;
+  height: 720px;
   transform: translate(-50%,-50%);
   background: rgba(20, 20, 20, 1);
   box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
@@ -37,23 +30,25 @@ left:0px;
 .head1
 {
   padding-top: 40px;
-  width: 340px;
+  width: 400pxpx;
 }
 .head2
 {
   display: flex;
   justify-content:space-between;
-  width: 340px;
+  width: 400px;
   text-align: left;
   align-content: left;
+}
+.hr{
+  width:400px
 }
 .uname
 {
   color: rgba(252, 221, 236, 1);
-  font-family: Poppins;
-  font-weight: SemiBold;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: bolder;
   font-size: 24px;
-
 }
 .lout {
   align-items: center;
@@ -99,29 +94,116 @@ left:0px;
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
-.chat-area
-{ background-color: green;
-  height: 75%;
-  padding-top: 20px;
-  width: 340px;
-}
-.txtbar
-{
-  height: 45px;
-  width: calc(100% - 58px);
-  font-size: 16px;
-  padding: 0 13px;
-  border: 1px solid #e6e6e6;
-  outline: none;
-  border-radius: 5px 0 0 5px;
-}
+
+
 .txts
 {
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
 }
+.txtbar
+{
+align-content:space-around;
+
+}
 .chat-area{
+  background-color: rgba(54,57,57);
   width: 400px;
-  height: 200px;
+  min-height: 500px;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+.chat-area::-webkit-scrollbar {
+  display: none;
+}
+
+.chat_area .chat{
+  margin: 15px 0;
+}
+.chat-area .chat p{
+  word-wrap: break-word;
+  padding: 8px 16px;
+  box-shadow: 0 0 32px rgb(0 0 0 / 8%),
+              0rem 16px 16px -16px rgb(0 0 0 / 10%);
+}
+.chat-area .outgoing{
+  display: flex;
+}
+.chat-area .outgoing .details{
+  margin-left: auto;
+  margin-right: 10px;
+  max-width: calc(100% - 130px);
+}
+.outgoing .details p{
+  background: #fff;
+  color: #333;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 18px 18px 0 18px;
+}
+
+
+.chat-box .incoming .details{
+  margin-right: auto;
+  margin-left: 10px;
+  max-width: 150px;
+}
+.incoming .details p{
+  background: rgb(68, 194, 243);
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: #333;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 18px 18px 18px 0;
+}
+.typing-area{
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.typing-area input{
+  height: 45px;
+  width: calc(100% - 58px);
+  font-size: 16px;
+  padding: 0 13px;
+  border: 1px solid #e6e6e6;
+  outline: none;
+  border-radius: 5px;
+}
+.typing-area button{
+  color:rgb(87, 87, 87);
+  width:55px;
+  border-radius: 5px;
+}
+
+.text{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: calc(100% - 50px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width:500px) {
+  .content{
+      position: absolute;
+      top: 0;
+        left: 0;
+          transform: translate(0%,0%);
+
+    max-width: 100%;
+  }
+.lout{
+  position: relative;
+  right:10px;
+}
+.txtbar
+{
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
 }

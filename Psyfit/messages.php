@@ -45,11 +45,11 @@ else {
 }
 
 }
+
  ?>
 <html>
 <head>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -58,34 +58,32 @@ else {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 </head>
 <body>
-  <div class="bg-img">
     <div class="content">
       <div class="head1">
     <div class="head2">
         <img src="https://picsum.photos/200/300?" style=" height:40px; width:40px; border-radius:50%;">
         <span class="uname" style="margin-left:-70px; margin-top:5px;" >Psyfer</span>
-        <form method="post" action="endsession.php"><button type="submit" name="endss" class="lout">End session</button>
+        <form method="post" action="endsession.php">
+          <button type="submit" name="endss" class="lout">End session</button>
          <input type="text" name="uname" value="<?php echo htmlspecialchars($username); ?>" hidden>
-        <input type="text" name="cname" value="<?php echo htmlspecialchars($currentemail); ?>" hidden></form>
+        <input type="text" name="cname" value="<?php echo htmlspecialchars($currentemail); ?>" hidden>
+      </form>
     </div>
-    <hr>
+    <hr style="width:400px">
    </div>
-   <div class="chat-area">
+   <div class="chat-area" id="ca">
      <div class="chat-box" id="cb">
-       <br>
-       <br>
-       <br>
-       <br>
+
      </div>
-     <div class="txtbar">
+    </div>
+    <div class="txtbar">
        <form action="#" class="typing-area">
        <input type="text" class="incoming_id" name="incoming_id" value="<?php echo $username; ?>" hidden>
        <input type="text" name="message" class="input-field" placeholder="Type a message here..."  autocomplete="off">
        <button onclick="send()"><i class="fab fa-telegram-plane"></i></button>
      </form>
    </div>
-</div>
-   </div>
+  </div>
 
 <script src="./js/chat.js"></script>
 

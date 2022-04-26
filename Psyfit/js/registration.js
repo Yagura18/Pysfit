@@ -48,9 +48,16 @@ cshowBtn.addEventListener('mouseout', function(){
    cshowBtn.style.color = "#222";
  }
 });
+
+
 function check(e) {
 var pass=document.getElementById("pswd");
 var cpass=document.getElementById("cpswd");
+var passw=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,20}$/;
+if (!pass.value.match(passw)) {
+  e.preventDefault();
+    alert("Please provide a proper password.\nPassword length=6-20\nAt least One Capital/small/number/Special Character");
+}
 if(pass.value!=cpass.value){
 e.preventDefault();
 alert("Password and Confirm Password must be same");

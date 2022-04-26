@@ -1,35 +1,73 @@
-const form = document.querySelector(".form-container"),
-incoming_id = form.querySelector(".email").value,
-inputField = form.querySelector(".note").value;
-alert("hello");
+
+var inputField = document.getElementById("note");
+var containerElement = document.getElementById("bgimg");
+data=inputField.value;
 function send(){
+  if (data.length==0) {
+    
+  }
+  else {
 $.post("insert-diary.php",
   {
     journal:inputField.value,
-    username: incoming_id,
   },
   function(data, status){
       console.log("Data: " + data + "\nStatus: " + status);
       inputField.value = "";
-       scrollToBottom();
   }
 );
+$.post("get-diary.php",
+  {
+
+  },
+  function(data, status){
+      console.log("Data: " + data + "\nStatus: " + status);
+      document.getElementById('cb').innerHTML=data;
+
+  }
+);}
 }
 
-setInterval(() =>{
-  $.post("get-diary.php",
-    {
+$.post("get-diary.php",
+  {
 
-    },
-    function(data, status){
-        console.log("Data: " + data + "\nStatus: " + status);
-        document.getElementById('cb').innerHTML=data;
-         scrollToBottom();
+  },
+  function(data, status){
+      console.log("Data: " + data + "\nStatus: " + status);
+      document.getElementById('cb').innerHTML=data;
 
-
-    }
+  }
 );
-},100);
+
+
 function openForm() {
   document.getElementById("myForm").style.display = "block";
+
 }
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+
+}
+
+
+var m = document.getElementById("mymusic");
+function play() {
+    m.play();
+    m.loop=true;
+    m.volume=0.1;
+}
+var btn=document.getElementById("music-btn");
+var clicked=false;
+function pause() {
+  console.log("clicked");
+    if(clicked==false){
+    m.pause();
+    clicked=true;
+    btn.setAttribute("class","fas fa-volume-mute");
+}
+else{
+    m.play();
+    clicked=false;
+    btn.setAttribute("class","fas fa-volume-up");
+    }
+  };

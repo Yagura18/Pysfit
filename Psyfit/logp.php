@@ -28,13 +28,15 @@ if(isset($_POST['submit']))
         {
             while($row = mysqli_fetch_array($result))
             {
-                if($row['password'] === $pass)
+                $verify=password_verify($pass,$row['password']);
+                if( $verify==1)
                 {
                     session_start();
                     $_SESSION['username'] = $user;
                     $_SESSION['user_status'] = "logged_in";
                     $_SESSION['start'] = time();
                     $_SESSION['expire'] = $_SESSION['start'] + (1440 * 60);
+
                     $sql="SELECT goal FROM goals ORDER by RAND() LIMIT 1";
                     $query=mysqli_query($conn,$sql);
                     if(mysqli_num_rows($query)){
@@ -73,7 +75,7 @@ if(isset($_POST['submit']))
         }
         else{
             echo '<script type="text/JavaScript">
-            alert("Please Sign Up Befor Login");
+            alert("Please Sign Up Before Login");
             window.location.replace("./registration.php");
             </script>';
             }

@@ -18,7 +18,6 @@ if(isset($_POST['submit1']))
 		{
 			die("Connection failed: ".mysqli_connect_error());
 		}
-
 		$sqlcheckuser="SELECT * FROM users WHERE username='$username'";
 		$test= mysqli_query($conn,$sqlcheckuser);
 		if(mysqli_num_rows($test))
@@ -35,6 +34,7 @@ if(isset($_POST['submit1']))
 				</script>';
 			}
 			else{
+        $pass=password_hash($pass,PASSWORD_DEFAULT);//newly added
   $sql="INSERT INTO users(username,email,password) VALUES('$username','$email','$pass')";
   if($conn->query($sql)===TRUE)
   {

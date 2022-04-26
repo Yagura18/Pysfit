@@ -5,11 +5,12 @@ include_once "session.php";
 $username=$_SESSION['username'];
  $sql="SELECT * FROM journal WHERE username='$username' " ;
 $query = mysqli_query($conn, $sql);
+$output="";
 if(mysqli_num_rows($query)){
     while($row = mysqli_fetch_assoc($query)){
       $output .= '<div class="chat outgoing">
                   <div class="details">
-                      <p>'. $row['journal'] .'</p>
+                      <p>'. $row['txt'] .'</p>
                   </div>
                   </div>';
       }
